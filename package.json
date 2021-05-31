@@ -38,6 +38,11 @@
     "nsis": {
       "allowToChangeInstallationDirectory": true,
       "oneClick": false
-    }
+    },
+    "publish": [{
+      "provider": "github",
+      "owner": "IhleMa",
+      "repo": "youtube-downloader"
+  }],
   }
 }
