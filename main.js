@@ -9,7 +9,7 @@ const { autoUpdater } = require('electron-updater');
 
 const expressApp = express();
 
-const mainWindow = function createWindow () {
+function createWindow () {
     const win = new BrowserWindow({
         width: 900,
         height: 500,
@@ -23,12 +23,14 @@ const mainWindow = function createWindow () {
 
     //win.webContents.openDevTools();
   
+    win.once('ready-to-show', () => {
+        autoUpdater.checkForUpdatesAndNotify();
+    });
+
     win.loadFile('index.html');
 }
 
-mainWindow.once('ready-to-show', () => {
-    autoUpdater.checkForUpdatesAndNotify();
-});
+
 
 
 autoUpdater.on('update-downloaded', () => {
