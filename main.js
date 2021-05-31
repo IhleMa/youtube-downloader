@@ -14,7 +14,7 @@ function createWindow () {
         width: 900,
         height: 500,
         icon: "icon.png",
-        title: "Youtube Playlist Downloader by the one and only Marvin Mc Big Cock",
+        title: "Youtube Playlist Downloader",
         autoHideMenuBar: true,
         webPreferences: {
             enableRemoteModule: true
