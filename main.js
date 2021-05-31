@@ -23,11 +23,9 @@ function createWindow () {
 
     //win.webContents.openDevTools();
   
-    win.once('ready-to-show', () => {
-        autoUpdater.checkForUpdatesAndNotify();
-    });
 
     win.loadFile('index.html');
+    autoUpdater.checkForUpdatesAndNotify();
 }
 
 
