@@ -5,10 +5,11 @@ const ytdl = require('ytdl-core');
 const ytpl = require('ytpl');
 const fs = require('fs');
 const downloadsFolder = require('downloads-folder');
+const { autoUpdater } = require('electron-updater');
 
 const expressApp = express();
 
-function createWindow () {
+const mainWindow = function createWindow () {
     const win = new BrowserWindow({
         width: 900,
         height: 500,
@@ -24,6 +25,32 @@ function createWindow () {
   
     win.loadFile('index.html');
 }
+
+mainWindow.once('ready-to-show', () => {
+    autoUpdater.checkForUpdatesAndNotify();
+});
+
+
+autoUpdater.on('update-downloaded', () => {
+
+    const options = {
+        title: "Update",
+        type: "info",
+        noLink: true,
+        buttons: ['Restart', 'Later'],
+        defaultId: 0,
+        cancelId: 1,
+        message: "An Update is Available!",
+        detail: "Restart to install the update."
+      };
+    
+      dialog.showMessageBox(null, options).then((data) => {
+          console.log(data);
+        if(data.response == 0){
+            autoUpdater.quitAndInstall();
+        }
+     });
+});
 
 app.whenReady().then(() => {
     createWindow();

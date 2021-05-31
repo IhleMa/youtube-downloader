@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "build": "electron-builder build --win --publish never",
+    "deploy": "electron-builder build --win --publish always"
   },
   "author": "Marvin Ihle",
   "license": "ISC",
@@ -17,9 +19,14 @@
   "dependencies": {
     "cors": "^2.8.5",
     "downloads-folder": "^3.0.1",
+    "electron-updater": "^4.3.9",
     "express": "^4.17.1",
     "ytdl-core": "^4.8.2",
     "ytpl": "^2.2.1"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/IhleMa/youtube-downloader.git"
   },
   "build": {
     "appId": "io.github.ihlema.youtube-downloader",
