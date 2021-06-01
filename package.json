@@ -1,6 +1,6 @@
 {
   "name": "youtube-downloader",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Allows you to download complete Youtube Playlists.",
   "main": "main.js",
   "scripts": {
