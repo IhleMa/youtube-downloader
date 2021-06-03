@@ -25,8 +25,8 @@
     "ytpl": "^2.2.1"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/IhleMa/youtube-downloader.git"
+    "type": "git",
+    "url": "https://github.com/IhleMa/youtube-downloader.git"
   },
   "build": {
     "appId": "io.github.ihlema.youtube-downloader",
@@ -39,10 +39,12 @@
       "allowToChangeInstallationDirectory": true,
       "oneClick": false
     },
-    "publish": [{
-      "provider": "github",
-      "owner": "IhleMa",
-      "repo": "youtube-downloader"
-    }]
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "IhleMa",
+        "repo": "youtube-downloader"
+      }
+    ]
   }
 }
