@@ -6,6 +6,7 @@ const ytpl = require('ytpl');
 const fs = require('fs');
 const downloadsFolder = require('downloads-folder');
 const { autoUpdater } = require('electron-updater');
+const path = require("path")
 
 const expressApp = express();
 
@@ -14,7 +15,7 @@ function createWindow () {
         width: 900,
         height: 500,
         icon: "icon.png",
-        title: "Youtube Playlist Downloader",
+        title: "Youtube Playlist Downloader v" + app.getVersion() ,
         autoHideMenuBar: true,
         webPreferences: {
             enableRemoteModule: true
